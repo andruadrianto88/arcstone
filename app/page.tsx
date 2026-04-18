@@ -1,5 +1,7 @@
 import Link from "next/link";
 import WorkShowcase from "@/components/sections/WorkShowcase";
+import AboutReveal from "@/components/sections/AboutReveal";
+import CaseStudies from "@/components/sections/CaseStudies";
 
 const plans = [
   {
@@ -203,99 +205,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FEATURED WORK ───────────────────────────────── */}
-      <section id="work" className="s border-b border-[#e8e8e8]">
-        <div className="wrap">
-          <div className="mx-16">
-            <span className="label"><mark className="bg-yellow-100 text-inherit">Recent Work</mark></span>
-            <h2 className="max-w-lg mb-0">
-              Work that speaks<br />for itself.
-            </h2>
-            <WorkShowcase work={work} />
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY US ───────────────────────────────────────── */}
-      <section className="s border-b border-[#e8e8e8]">
-        <div className="wrap">
-          <div className="mx-16">
-
-            {/* Top: Massive Clay-style Heading Block */}
-            <div className="mb-12">
-              <h2 className="text-[2.8rem] md:text-[3.8rem] font-bold tracking-tight leading-[1] max-w-3xl text-[#111] mb-5">
-                We're a small agency, <br/>
-                <span className="text-[#3b6df4]">that's our edge.</span>
+      {/* ── STACKING GROUP: Work pins, About + Case Studies scroll over it ── */}
+      <div className="relative">
+        {/* Featured Work — sticky pin */}
+        <section id="work" className="s border-b border-[#e8e8e8] sticky top-0 z-0 bg-white">
+          <div className="wrap">
+            <div className="mx-16">
+              <span className="label"><mark className="bg-yellow-100 text-inherit">Recent Work</mark></span>
+              <h2 className="max-w-lg mb-0">
+                Work that speaks<br />for itself.
               </h2>
-              <p className="text-[#111] font-medium text-[16px] leading-snug max-w-xl mb-7">
-                Getting the right website is only half the battle: the real value comes from a team that actually understands your business. Work directly with the designers and developers building your site. No layers, no account managers.
-              </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#111] text-white text-[14px] font-semibold px-5 py-3 rounded-lg hover:bg-black/80 transition-all">
-                Book a Free Call
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </Link>
+              <WorkShowcase work={work} />
             </div>
-
-            {/* Bento Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-              {/* Giant text card */}
-              <div className="md:col-span-2 bg-[#f3f3f3] p-10 flex flex-col justify-between">
-                <div>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="mb-6 text-[#111]">
-                    <rect x="3" y="11" width="18" height="11" rx="0"/><path d="M7 11V7a5 5 0 0110 0v4"/>
-                  </svg>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight max-w-md text-[#111]">You own everything.<br/>Always.</h3>
-                </div>
-                <p className="text-[#666] leading-snug text-sm max-w-md">
-                  Your code, your domain, your content. We don&apos;t believe in lock-in contracts or holding websites hostage. You can walk away at any time with everything you paid for.
-                </p>
-              </div>
-
-              {/* Pricing transparency card */}
-              <div className="bg-[#111] p-10 flex flex-col justify-between group">
-                <div className="mb-10">
-                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[var(--accent)]">
-                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                   </svg>
-                </div>
-                <div>
-                  <h3 className="text-white text-2xl font-bold mb-2 tracking-tight">Transparent<br/>pricing.</h3>
-                  <p className="text-white/60 leading-snug text-xs">No enterprise invoice, no hidden fees, no ongoing retainer traps. You know exactly what you&apos;ll pay upfront.</p>
-                </div>
-              </div>
-
-              {/* Fast delivery card */}
-              <div className="bg-[#111] p-10 flex flex-col justify-between group">
-                <div className="mb-10">
-                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[var(--accent)]">
-                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                   </svg>
-                </div>
-                <div>
-                  <h3 className="text-white text-2xl font-bold mb-2 tracking-tight">Live in just<br/>two weeks.</h3>
-                  <p className="text-white/60 leading-snug text-xs">Agencies drag projects out for months. We design, build, and launch most standard websites in 14 days.</p>
-                </div>
-              </div>
-
-              {/* Text card */}
-              <div className="md:col-span-2 bg-[#f3f3f3] p-10 flex flex-col justify-between">
-                <div className="flex justify-between items-start mb-6">
-                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[#111]">
-                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                   </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight max-w-md text-[#111]">Performance is non-negotiable.</h3>
-                  <p className="text-[#666] leading-snug text-sm max-w-lg">
-                    Every site ships fast, accessible, and SEO-ready out of the box. No bloated plugins, no lazy shortcuts. Built for speed and conversion from day one.
-                  </p>
-                </div>
-              </div>
-            </div>
-
           </div>
+        </section>
+
+        {/* About — covers Work as it scrolls up */}
+        <div className="relative z-10">
+          <AboutReveal as="h2" />
+        </div>
+
+        {/* Case Studies — continues the dark stack */}
+        <div className="relative z-10">
+          <CaseStudies />
+        </div>
+      </div>
+
+      {/* ── MANIFESTO ───────────────────────────────────── */}
+      <section className="relative bg-[#101010] text-white overflow-hidden border-b border-black py-14 md:py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(to right, #fff 0 0.5px, transparent 0.5px 24px)",
+          }}
+        />
+        <div className="relative wrap">
+          <p className="max-w-[1600px] mx-auto text-[24px] md:text-[34px] leading-[1.25] tracking-tight font-semibold">
+            <span className="inline-block w-12 md:w-20" />
+            We are an eCommerce agency. Not just execution, not isolated services. We provide brand direction, advanced tech, performance marketing and system integration as one connected approach. An end-to-end ecosystem designed to scale, perform and integrate seamlessly with existing platforms.
+          </p>
         </div>
       </section>
 
