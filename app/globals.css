@@ -1,26 +1,168 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white: #ffffff;
+  --grey-1: #f7f7f7;
+  --grey-2: #efefef;
+  --border: #e8e8e8;
+  --text-1: #111111;
+  --text-2: #555555;
+  --text-3: #999999;
+  --accent: #f2ff37;
+  --accent-dk: #deed00;
+  --black: #111111;
+  --black-2: #1a1a1a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #fff;
+    color: var(--text-2);
+    font-family: var(--font-sans), -apple-system, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: var(--text-1);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+
+  h3 {
+    font-size: clamp(1.4rem, 2vw, 2.2rem);
+  }
+
+  h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+
+  /* Layout */
+  .wrap {
+    width: 100%;
+    max-width: 82rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+
+  /* Section padding */
+  .s {
+    padding-block: 6rem;
+  }
+
+  .s-xl {
+    padding-block: 9rem;
+  }
+
+  /* Label above sections */
+  .label {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Pill buttons */
+  .pill-dark {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.2rem;
+    border-radius: 8px;
+    background: var(--text-1);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: opacity 0.15s;
+  }
+
+  .pill-dark:hover { text-decoration: underline; }
+
+  .pill-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.2rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    color: var(--text-1);
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: #fff;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .pill-outline:hover { text-decoration: underline; }
+
+  .pill-accent {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.2rem;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--black);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background 0.15s;
+  }
+
+  .pill-accent:hover { text-decoration: underline; }
+
+  /* Service tag pills */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.2rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    color: var(--text-1);
+    font-size: 0.825rem;
+    font-weight: 500;
+    background: #fff;
+    white-space: nowrap;
+    transition: background 0.12s, border-color 0.12s;
+    cursor: pointer;
+  }
+
+  .tag:hover {
+    background: var(--grey-1);
+    border-color: #ccc;
+  }
+
 }
+
