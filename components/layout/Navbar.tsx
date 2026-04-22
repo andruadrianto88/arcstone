@@ -38,7 +38,7 @@ export default function Navbar() {
             {/* CTA — right */}
             <div className="hidden md:flex justify-end">
               <Link href="/contact" className="pill-accent text-sm">
-                Get Free Demo →
+                Get Free Mockup →
               </Link>
             </div>
 
@@ -65,7 +65,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link href="/contact" className="pill-accent w-fit" onClick={() => setOpen(false)}>
-                Get Free Demo →
+                Get Free Mockup →
               </Link>
             </div>
           )}

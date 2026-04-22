@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 
 type Row = {
   partner: string;
-  platform: string;
+  value: string;
+  outcome: string;
   service: string;
   href: string;
   image: string;
@@ -14,44 +15,50 @@ type Row = {
 
 const ROWS: Row[] = [
   {
-    partner: "The Local Bistro",
-    platform: "Next.js + CMS",
-    service: "UX/UI, Dev, Integration, SEO",
+    partner: "Vossén",
+    value: "Built for bookings",
+    outcome: "Designed to increase bookings with a frictionless flow",
+    service: "Design, Dev, SEO",
     href: "#",
     image: "/work1.png",
   },
   {
-    partner: "Adelaide Plumbing Co.",
-    platform: "Webflow",
-    service: "UX/UI, Dev, Marketing, SEO",
+    partner: "Uncle Hainanese",
+    value: "Easy to update",
+    outcome: "Built to streamline reservations and reduce manual updates",
+    service: "Design, Dev, Copywriting",
     href: "#",
     image: "/work2.png",
   },
   {
-    partner: "Greenfield Retail",
-    platform: "Shopify Plus",
-    service: "UX/UI, Dev B2C, Integration, SEO",
+    partner: "KORA",
+    value: "Built for conversions",
+    outcome: "Designed to drive event sign-ups and repeat visits",
+    service: "Design, Dev, SEO",
     href: "#",
     image: "/work3.png",
   },
   {
-    partner: "Northline Studio",
-    platform: "Shopify",
-    service: "UX/UI, Brand Direction",
+    partner: "Harlow & Co.",
+    value: "Built for leads",
+    outcome: "Built to turn visitors into paying clients",
+    service: "Design, Copywriting, Dev",
     href: "#",
     image: "/work1.png",
   },
   {
-    partner: "Kunzi",
-    platform: "Shopify Plus",
-    service: "UX/UI, Dev (B2C/B2B), Integration",
+    partner: "Saltwood Café",
+    value: "Built for walk-ins",
+    outcome: "Designed to attract walk-ins and grow regulars",
+    service: "Design, Dev, SEO",
     href: "#",
     image: "/work2.png",
   },
   {
-    partner: "Rombo Group",
-    platform: "Laravel",
-    service: "UX/UI, Dev, Integration, SEO",
+    partner: "Mercer Legal",
+    value: "Built for trust",
+    outcome: "Built to build trust and drive enquiries",
+    service: "Design, Dev, Copywriting",
     href: "#",
     image: "/work3.png",
   },
@@ -63,7 +70,7 @@ export default function CaseStudies() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="relative bg-[#101010] text-white overflow-hidden border-b border-black py-20 md:py-28">
+    <section className="relative bg-[#101010] text-white overflow-hidden py-20 md:py-28">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
@@ -75,24 +82,15 @@ export default function CaseStudies() {
 
 
       <div className="relative wrap">
-        {/* Decorative brackets — aligned with Partner / Service columns */}
-        <span
-          aria-hidden
-          className="pointer-events-none absolute top-0 left-0 text-white font-[family-name:var(--font-harmond)] leading-none select-none text-[20px] md:text-[24px]"
-        >
-          {"{"}
-        </span>
-        <span
-          aria-hidden
-          className="pointer-events-none absolute bottom-0 right-0 text-white font-[family-name:var(--font-harmond)] leading-none select-none text-[20px] md:text-[24px]"
-        >
-          {"}"}
-        </span>
+        {/* Section label */}
+        <div className="mb-10 md:mb-14">
+          <p className="text-[11px] uppercase tracking-[0.2em] text-white/40 font-semibold">Selected Work &amp; Results</p>
+        </div>
 
         {/* Header row */}
-        <div className="grid grid-cols-[1fr_1fr_minmax(360px,1.6fr)_auto_1fr] items-center gap-6 text-[12px] text-white/50 mb-14 md:mb-20">
+        <div className="grid grid-cols-[1fr_1fr_minmax(360px,1.6fr)_auto_1fr] items-center gap-6 text-[12px] text-white/50 mb-6">
           <span>Partner</span>
-          <span>Platform</span>
+          <span>Built for</span>
           <span className="font-[family-name:var(--font-display)] tracking-wider text-white/70 text-center">
             <span className="text-white/40">(&nbsp;&nbsp;</span>
             <span className="underline underline-offset-4">ARCSTONE CASE STUDIES</span>
@@ -100,13 +98,13 @@ export default function CaseStudies() {
           </span>
           <span />
           <span className="text-right">Service</span>
-          <p className="col-span-full text-center text-[10px] text-white/40 tracking-wide md:hidden -mt-6 mb-2">
+          <p className="col-span-full text-center text-[10px] text-white/40 tracking-wide md:hidden -mt-4 mb-2">
             Tap a row to preview
           </p>
         </div>
 
         {/* Floating preview image */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[22%] max-w-[360px] aspect-[4/6] pointer-events-none z-0">
+        <div className="absolute left-[53%] top-[52%] -translate-x-1/2 -translate-y-1/2 w-[25%] max-w-[380px] aspect-[4/5] pointer-events-none z-0">
           {ROWS.map((r, i) => {
             const on = hovered === i;
             return (
@@ -126,7 +124,7 @@ export default function CaseStudies() {
           })}
         </div>
 
-        {/* Rows — quiet desktop hint (fades on hover) */}
+        {/* Rows */}
         <div className="relative">
           <motion.p
             aria-hidden
@@ -150,15 +148,18 @@ export default function CaseStudies() {
                     className="block py-2.5"
                   >
                     <div
-                      className="grid grid-cols-[1fr_1fr_minmax(360px,1.6fr)_auto_1fr] items-center gap-6 leading-[1.15] transition-colors duration-200 font-[family-name:var(--font-harmond)] text-[15px] md:text-[16px] uppercase tracking-[0.12em]"
+                      className="grid grid-cols-[1fr_1fr_minmax(360px,1.6fr)_auto_1fr] items-start gap-6 leading-[1.15] transition-colors duration-200 font-[family-name:var(--font-harmond)] text-[15px] md:text-[16px] uppercase tracking-[0.12em]"
                       style={{
                         background: isHover ? "#fff" : "transparent",
                         color: isHover ? "#000" : "#ffffff",
                         mixBlendMode: isHover ? "difference" : "normal",
                       }}
                     >
-                      <span className="truncate">{r.partner}</span>
-                      <span className="truncate" style={{ color: isHover ? "#000" : "rgba(255,255,255,0.9)" }}>{r.platform}</span>
+                      <div className="flex flex-col gap-1">
+                        <span className="truncate">{r.partner}</span>
+                        <span className="font-sans normal-case tracking-normal text-[11px] opacity-60 font-normal">{r.outcome}</span>
+                      </div>
+                      <span className="truncate text-[13px]" style={{ color: isHover ? "#000" : "rgba(255,255,255,0.7)" }}>{r.value}</span>
                       <span />
                       <span className="w-16 text-center normal-case" style={{ color: isHover ? "#000" : "rgba(255,255,255,0.6)" }}>({LETTERS[i]}.)</span>
                       <span className="text-right truncate font-sans normal-case tracking-normal text-[13px]">
@@ -170,6 +171,17 @@ export default function CaseStudies() {
               );
             })}
           </ul>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 md:mt-20 flex flex-col sm:flex-row sm:items-center gap-4">
+          <p className="text-white/50 text-sm">Want something like this for your business?</p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-white text-black text-[13px] font-semibold px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors duration-200 shrink-0"
+          >
+            Get your free homepage mockup →
+          </Link>
         </div>
       </div>
     </section>
