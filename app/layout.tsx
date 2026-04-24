@@ -40,9 +40,35 @@ const harmond = localFont({
   display: "swap",
 });
 
+const BASE_URL = "https://goodsites.com.au";
+
 export const metadata: Metadata = {
-  title: "GoodSites — Web Design Adelaide",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "GoodSites — Web Design Adelaide",
+    template: "%s | GoodSites",
+  },
   description: "Affordable, custom websites for small businesses in Adelaide. Web design, SEO, copywriting and maintenance. Get a free quote today.",
+  keywords: ["web design Adelaide", "small business website", "affordable website Adelaide", "SEO Adelaide", "website design"],
+  authors: [{ name: "GoodSites", url: BASE_URL }],
+  creator: "GoodSites",
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    url: BASE_URL,
+    siteName: "GoodSites",
+    title: "GoodSites — Web Design Adelaide",
+    description: "Affordable, custom websites for small businesses in Adelaide. Web design, SEO, copywriting and maintenance. Get a free quote today.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "GoodSites — Web Design Adelaide" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GoodSites — Web Design Adelaide",
+    description: "Affordable, custom websites for small businesses in Adelaide.",
+    images: ["/og-image.png"],
+  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  icons: { icon: "/logo_box.jpeg" },
 };
 
 export default function RootLayout({

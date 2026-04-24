@@ -60,7 +60,7 @@ export default function BeforeAfterSlider({
     >
       {/* AFTER — full width base */}
       <div className="absolute inset-0">
-        <Image src={after} alt={afterAlt} fill className="object-cover object-top" sizes="100vw" unoptimized />
+        <Image src={after} alt={afterAlt} fill className="object-cover object-top" sizes="100vw" priority />
         <span className="absolute top-4 right-4 text-[13px] font-bold text-[#1a7a3c] bg-green-50/90 border border-green-200 px-3 py-1 rounded-full backdrop-blur-sm">
           ✓ After
         </span>
@@ -71,7 +71,7 @@ export default function BeforeAfterSlider({
         className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        <Image src={before} alt={beforeAlt} fill className="object-cover object-top" sizes="100vw" unoptimized />
+        <Image src={before} alt={beforeAlt} fill className="object-cover object-top" sizes="100vw" priority />
         <span className="absolute top-4 left-4 text-[13px] font-bold text-[#cc2200] bg-red-50/90 border border-red-200 px-3 py-1 rounded-full backdrop-blur-sm">
           ✕ Before
         </span>

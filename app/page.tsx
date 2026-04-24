@@ -126,7 +126,7 @@ const work = [
     statLabel: "Vossén",
     statDesc: "Online bookings increased 60% within the first month of launch.",
     href: "#",
-    image: "/work1.png",
+    image: "/work1.webp",
   },
   {
     client: "Uncle Hainanese",
@@ -142,7 +142,7 @@ const work = [
     statLabel: "Uncle Hainanese",
     statDesc: "Table reservations doubled within weeks of the new site going live.",
     href: "#",
-    image: "/work2.png",
+    image: "/work2.webp",
   },
   {
     client: "KORA",
@@ -157,16 +157,33 @@ const work = [
     statLabel: "KORA",
     statDesc: "Average dwell time increased 40% — visitors spend more time before visiting.",
     href: "#",
-    image: "/work3.png",
+    image: "/work3.webp",
   },
 ];
 
 
 
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "GoodSites",
+  description: "Affordable, custom websites for small businesses in Adelaide. Web design, SEO, copywriting and maintenance.",
+  url: "https://goodsites.com.au",
+  areaServed: { "@type": "City", name: "Adelaide" },
+  address: { "@type": "PostalAddress", addressLocality: "Adelaide", addressRegion: "SA", addressCountry: "AU" },
+  priceRange: "$$",
+  serviceType: ["Web Design", "Web Development", "SEO", "Copywriting"],
+  offers: [
+    { "@type": "Offer", name: "Basic Website", price: "300", priceCurrency: "AUD" },
+    { "@type": "Offer", name: "Pro Website", price: "500", priceCurrency: "AUD" },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="border-b border-[#e8e8e8]">
         {/* Text block — centered */}
@@ -199,8 +216,8 @@ export default function Home() {
             {/* Slider */}
             <div className="mt-10">
               <BeforeAfterSlider
-                before="/before.jpg"
-                after="/after.jpeg"
+                before="/before.webp"
+                after="/after.webp"
                 beforeAlt="Before — outdated website"
                 afterAlt="After — modern website"
               />
@@ -310,7 +327,7 @@ export default function Home() {
         <div className="relative wrap">
           <p className="max-w-[1600px] mx-auto text-[24px] md:text-[34px] leading-[1.25] tracking-tight font-semibold">
             <span className="inline-block w-12 md:w-20" />
-            We&apos;re a small team — and that&apos;s the point. No account managers, no junior handoffs, no broken telephone. When you work with{" "}<Image src="/logo.png" alt="GoodSites" width={34} height={7} className="inline-block align-middle mx-1" unoptimized />{" "}<span style={{ fontFamily: "var(--font-mango)", letterSpacing: "0.01em", fontStyle: "normal", fontWeight: 700 }}>GOODSITES</span>, you work directly with the people building your site.
+            We&apos;re a small team — and that&apos;s the point. No account managers, no junior handoffs, no broken telephone. When you work with{" "}<Image src="/logo.png" alt="GoodSites" width={34} height={7} className="inline-block align-middle mx-1" />{" "}<span style={{ fontFamily: "var(--font-mango)", letterSpacing: "0.01em", fontStyle: "normal", fontWeight: 700 }}>GOODSITES</span>, you work directly with the people building your site.
           </p>
         </div>
       </section>
@@ -485,7 +502,7 @@ export default function Home() {
       {/* ── FREE DEMO CTA ───────────────────────────────── */}
       <section className="relative overflow-hidden" style={{ minHeight: "320px" }}>
         <img
-          src="/hero_bg.png"
+          src="/hero_bg.webp"
           alt=""
           aria-hidden
           className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"

@@ -20,7 +20,7 @@ const ROWS: Row[] = [
     outcome: "Designed to increase bookings with a frictionless flow",
     service: "Design, Dev, SEO",
     href: "#",
-    image: "/work1.png",
+    image: "/work1.webp",
   },
   {
     partner: "Uncle Hainanese",
@@ -28,7 +28,7 @@ const ROWS: Row[] = [
     outcome: "Built to streamline reservations and reduce manual updates",
     service: "Design, Dev, Copywriting",
     href: "#",
-    image: "/work2.png",
+    image: "/work2.webp",
   },
   {
     partner: "KORA",
@@ -36,7 +36,7 @@ const ROWS: Row[] = [
     outcome: "Designed to drive event sign-ups and repeat visits",
     service: "Design, Dev, SEO",
     href: "#",
-    image: "/work3.png",
+    image: "/work3.webp",
   },
   {
     partner: "Harlow & Co.",
@@ -44,7 +44,7 @@ const ROWS: Row[] = [
     outcome: "Built to turn visitors into paying clients",
     service: "Design, Copywriting, Dev",
     href: "#",
-    image: "/work1.png",
+    image: "/work1.webp",
   },
   {
     partner: "Saltwood Café",
@@ -52,7 +52,7 @@ const ROWS: Row[] = [
     outcome: "Designed to attract walk-ins and grow regulars",
     service: "Design, Dev, SEO",
     href: "#",
-    image: "/work2.png",
+    image: "/work2.webp",
   },
   {
     partner: "Mercer Legal",
@@ -60,7 +60,7 @@ const ROWS: Row[] = [
     outcome: "Built to build trust and drive enquiries",
     service: "Design, Dev, Copywriting",
     href: "#",
-    image: "/work3.png",
+    image: "/work3.webp",
   },
 ];
 

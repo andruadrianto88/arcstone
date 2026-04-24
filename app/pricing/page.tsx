@@ -1,4 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Pricing",
+  description: "Simple, transparent website pricing for small businesses in Adelaide. No hidden fees, no retainers. From $300 one-time. See your site before you pay.",
+  openGraph: {
+    title: "Pricing | GoodSites",
+    description: "Simple, transparent website pricing for small businesses in Adelaide. No hidden fees, no retainers. From $300 one-time.",
+    url: "https://goodsites.com.au/pricing",
+  },
+};
 
 const plans = [
   {
