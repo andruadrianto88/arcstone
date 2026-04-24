@@ -14,7 +14,7 @@ export default function ContactPage() {
   const [state, handleSubmit] = useForm("mpqkbqal");
 
   return (
-    <main className="relative min-h-screen pt-16 pb-16 overflow-hidden">
+    <main className="relative min-h-screen pt-8 md:pt-16 pb-12 md:pb-16 overflow-hidden">
       {/* Background gradient */}
       <div
         aria-hidden
@@ -201,7 +201,7 @@ function Confirmation() {
 /* ────────────────────────────────────────────────────────── */
 
 const inputCls =
-  "w-full bg-[#fafafa] border border-[#e8e8e8] rounded-xl px-4 py-3.5 text-[15px] text-[#111] placeholder:text-[#bbb] focus:outline-none focus:border-[#111] focus:bg-white transition-all";
+  "w-full bg-[#fafafa] border border-[#e8e8e8] rounded-xl px-4 py-3.5 text-base md:text-[15px] text-[#111] placeholder:text-[#bbb] focus:outline-none focus:border-[#111] focus:bg-white transition-all";
 
 function Field({
   label, optional, children,

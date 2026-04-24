@@ -24,8 +24,8 @@ const cols = [
 export default function Footer() {
   return (
     <footer className="bg-[#111] text-[#666]">
-      <div className="wrap py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+      <div className="wrap py-10 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-10 md:mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <p className="text-white text-xl mb-3" style={{ fontFamily: "var(--font-mango)", letterSpacing: "0.01em", fontWeight: 700 }}>GOODSITES</p>

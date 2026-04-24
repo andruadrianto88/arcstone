@@ -16,8 +16,8 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="wrap">
         {/* Black bar — floats with white space on top + sides */}
-        <div className="bg-[#111] rounded-xl px-6 mt-3 mx-16">
-          <div className="grid grid-cols-3 items-center h-[60px]">
+        <div className="bg-[#111] rounded-xl px-4 md:px-6 mt-3 mx-0 md:mx-16">
+          <div className="grid grid-cols-[auto_1fr_auto] md:grid-cols-3 items-center h-[56px] md:h-[60px]">
 
             {/* Logo — left */}
             <Link href="/" className="flex items-center gap-2 text-white text-lg tracking-tight">
@@ -44,8 +44,13 @@ export default function Navbar() {
 
             {/* Mobile toggle */}
             <div className="md:hidden col-start-3 flex justify-end">
-              <button className="p-1 text-white" onClick={() => setOpen(!open)}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <button
+                aria-label="Toggle menu"
+                aria-expanded={open}
+                className="p-3 -mr-2 text-white"
+                onClick={() => setOpen(!open)}
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   {open
                     ? <path d="M18 6L6 18M6 6l12 12"/>
                     : <path d="M3 12h18M3 6h18M3 18h18"/>}
@@ -56,15 +61,15 @@ export default function Navbar() {
 
           {/* Mobile menu */}
           {open && (
-            <div className="md:hidden border-t border-white/10 py-5 flex flex-col gap-4">
+            <div className="md:hidden border-t border-white/10 py-3 flex flex-col">
               {links.map(l => (
                 <Link key={l.href} href={l.href}
-                  className="text-[#e0e0e0] hover:text-white font-medium transition-colors text-sm"
+                  className="text-[#e0e0e0] hover:text-white font-medium text-base py-3"
                   onClick={() => setOpen(false)}>
                   {l.label}
                 </Link>
               ))}
-              <Link href="/contact" className="pill-accent w-fit" onClick={() => setOpen(false)}>
+              <Link href="/contact" className="pill-accent mt-3 mb-1" onClick={() => setOpen(false)}>
                 Get Free Mockup →
               </Link>
             </div>

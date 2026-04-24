@@ -52,8 +52,8 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className="relative w-full select-none overflow-hidden rounded-2xl border border-[#e0e0e0] shadow-md cursor-col-resize"
-      style={{ aspectRatio: "16/9" }}
+      className="relative w-full select-none overflow-hidden rounded-xl md:rounded-2xl border border-[#e0e0e0] shadow-md cursor-col-resize aspect-[4/3] md:aspect-[16/9]"
+      style={{ touchAction: "pan-y" }}
       onMouseDown={(e) => { dragging.current = true; updateFromEvent(e.clientX); }}
       onTouchMove={onTouchMove}
       onTouchStart={(e) => updateFromEvent(e.touches[0].clientX)}
@@ -61,7 +61,7 @@ export default function BeforeAfterSlider({
       {/* AFTER — full width base */}
       <div className="absolute inset-0">
         <Image src={after} alt={afterAlt} fill className="object-cover object-top" sizes="100vw" priority />
-        <span className="absolute top-4 right-4 text-[13px] font-bold text-[#1a7a3c] bg-green-50/90 border border-green-200 px-3 py-1 rounded-full backdrop-blur-sm">
+        <span className="absolute top-2 right-2 md:top-4 md:right-4 text-[11px] md:text-[13px] font-bold text-[#1a7a3c] bg-green-50/90 border border-green-200 px-2.5 py-0.5 md:px-3 md:py-1 rounded-full backdrop-blur-sm">
           ✓ After
         </span>
       </div>
@@ -72,7 +72,7 @@ export default function BeforeAfterSlider({
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
         <Image src={before} alt={beforeAlt} fill className="object-cover object-top" sizes="100vw" priority />
-        <span className="absolute top-4 left-4 text-[13px] font-bold text-[#cc2200] bg-red-50/90 border border-red-200 px-3 py-1 rounded-full backdrop-blur-sm">
+        <span className="absolute top-2 left-2 md:top-4 md:left-4 text-[11px] md:text-[13px] font-bold text-[#cc2200] bg-red-50/90 border border-red-200 px-2.5 py-0.5 md:px-3 md:py-1 rounded-full backdrop-blur-sm">
           ✕ Before
         </span>
       </div>

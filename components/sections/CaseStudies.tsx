@@ -68,7 +68,7 @@ export default function CaseStudies() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="relative bg-[#101010] text-white overflow-hidden py-20 md:py-28">
+    <section className="relative bg-[#101010] text-white overflow-hidden py-12 md:py-28">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
@@ -86,7 +86,7 @@ export default function CaseStudies() {
         </div>
 
         {/* Header row */}
-        <div className="grid grid-cols-[1.5fr_1fr_minmax(300px,1.5fr)_1fr] items-center gap-6 text-[12px] text-white/50 mb-6 px-4">
+        <div className="hidden md:grid grid-cols-[1.5fr_1fr_minmax(300px,1.5fr)_1fr] items-center gap-6 text-[12px] text-white/50 mb-6 px-4">
           <span>Partner</span>
           <span>Outcome</span>
           <span className="font-[family-name:var(--font-display)] tracking-wider text-white/70 text-center">
@@ -95,13 +95,10 @@ export default function CaseStudies() {
             <span className="text-white/40">&nbsp;&nbsp;)</span>
           </span>
           <span className="text-right">Service</span>
-          <p className="col-span-full text-center text-[10px] text-white/40 tracking-wide md:hidden -mt-4 mb-2">
-            Tap a row to preview
-          </p>
         </div>
 
         {/* Floating preview image */}
-        <div className="absolute left-[65%] top-[48%] -translate-x-1/2 -translate-y-1/2 w-[32%] max-w-[480px] aspect-[16/9] pointer-events-none z-0">
+        <div className="hidden md:block absolute left-[65%] top-[48%] -translate-x-1/2 -translate-y-1/2 w-[32%] max-w-[480px] aspect-[16/9] pointer-events-none z-0">
           {ROWS.map((r, i) => {
             const on = hovered === i;
             return (
@@ -142,10 +139,20 @@ export default function CaseStudies() {
                     href={r.href}
                     onMouseEnter={() => setHovered(i)}
                     onMouseLeave={() => setHovered(null)}
-                    className={`block py-3 px-4 -mx-4 rounded-xl transition-all duration-200 ${isHover ? "bg-white/5" : ""}`}
+                    className={`block py-4 md:py-3 px-3 md:px-4 -mx-3 md:-mx-4 rounded-xl border-b border-white/5 md:border-0 transition-all duration-200 ${isHover ? "md:bg-white/5" : ""}`}
                   >
+                    {/* Mobile stacked */}
+                    <div className="md:hidden flex flex-col gap-1.5">
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="font-[family-name:var(--font-harmond)] text-[15px] uppercase tracking-[0.12em] text-white truncate">{r.partner}</span>
+                        <span className="text-white/80 text-[12px] shrink-0">{r.value}</span>
+                      </div>
+                      <span className="text-white/50 text-[12px] leading-snug">{r.outcome}</span>
+                      <span className="text-white/40 text-[11px]">{r.service}</span>
+                    </div>
+                    {/* Desktop grid */}
                     <div
-                      className="grid grid-cols-[1.5fr_1fr_minmax(300px,1.5fr)_1fr] items-start gap-6 leading-[1.15] font-[family-name:var(--font-harmond)] text-[15px] md:text-[16px] uppercase tracking-[0.12em]"
+                      className="hidden md:grid grid-cols-[1.5fr_1fr_minmax(300px,1.5fr)_1fr] items-start gap-6 leading-[1.15] font-[family-name:var(--font-harmond)] text-[15px] md:text-[16px] uppercase tracking-[0.12em]"
                     >
                       <div className="flex flex-col gap-1">
                         <span className="truncate text-white">{r.partner}</span>
@@ -165,7 +172,7 @@ export default function CaseStudies() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 md:mt-20 flex flex-col sm:flex-row sm:items-center gap-4">
+        <div className="mt-10 md:mt-20 flex flex-col sm:flex-row sm:items-center gap-4">
           <p className="text-white/50 text-sm">Want something like this for your business?</p>
           <Link
             href="/contact"

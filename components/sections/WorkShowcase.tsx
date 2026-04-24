@@ -24,7 +24,7 @@ function SquareImage({ item, index }: { item: WorkItem; index: number }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="relative group shrink-0 w-[85vw] md:w-auto snap-center"
     >
-      <Link href={item.href} className="block w-full">
+      <Link href={item.href} target="_blank" rel="noopener noreferrer" className="block w-full">
         <div className="relative w-full aspect-square md:aspect-auto md:h-[28vh] overflow-hidden rounded-none bg-[#f0f0f0]">
           <img
             src={item.image}

@@ -158,7 +158,7 @@ export default function AboutReveal({ as = "h2", className = "" }: Props) {
             <p className="text-white/80 text-[14px] md:text-[15px] leading-relaxed italic">
               "Loved the final result — clean, professional, and exactly what we needed."
             </p>
-            <p className="mt-2 text-white/40 text-[12px] tracking-wide">— Nick Wang, Owner of Uncle Hainanese Chicken Rice</p>
+            <p className="mt-2 text-white/40 text-[12px] tracking-wide">— Owner, Uncle Hainanese Chicken Rice</p>
           </motion.div>
         </div>
       </div>
