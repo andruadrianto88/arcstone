@@ -199,7 +199,7 @@ export default function Home() {
             Get a free custom homepage mockup for your business — and see how your site could perform before committing.
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 w-full sm:w-auto max-w-xs sm:max-w-none">
-            <Link href="/work" className="pill-accent shadow-[0_4px_12px_rgba(0,0,0,0.25)]">See Our Work →</Link>
+            <Link href="#work" className="pill-accent shadow-[0_4px_12px_rgba(0,0,0,0.25)]">See Our Work →</Link>
             <Link href="/contact" className="pill-outline">Get Free Mockup →</Link>
           </div>
         </div>
@@ -288,11 +288,11 @@ export default function Home() {
           <StackReveal>
             <AboutReveal as="h2" />
           </StackReveal>
-          <CaseStudies />
+          {/* <CaseStudies /> */}
         </div>
       </div>
 
-      {/* ── PROOF STRIP ─────────────────────────────────── */}
+      {/* ── RESULT SPOTLIGHT ────────────────────────────── */}
       <section className="relative bg-[#101010] text-white overflow-hidden">
         <div
           aria-hidden
@@ -300,19 +300,69 @@ export default function Home() {
           style={{ backgroundImage: "repeating-linear-gradient(to right, #fff 0 1px, transparent 1px 24px)" }}
         />
         <div className="relative wrap">
-          <div className="mx-0 md:mx-16 pt-10 pb-10 md:pt-20 md:pb-20">
-            <div className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 divide-white/10">
-              {[
-                { stat: "500+", label: "Visitors in less than a month", sub: "Uncle Hainanese Chicken Rice" },
-                { stat: "2×", label: "Bookings after launch", sub: "Local Adelaide businesses" },
-                { stat: "14 days", label: "Average time to go live", sub: "From first call to launch" },
-              ].map(({ stat, label, sub }) => (
-                <div key={stat} className="flex flex-col gap-2 px-0 md:px-10 first:pl-0 last:pr-0 py-6 md:py-0">
-                  <p className="text-[44px] md:text-[64px] font-extrabold leading-none tracking-tight text-white">{stat}</p>
-                  <p className="text-[15px] font-semibold text-white/90 leading-snug">{label}</p>
-                  <p className="text-[12px] text-white/40 tracking-wide">{sub}</p>
+          <div className="mx-0 md:mx-16 py-6 md:py-8">
+            <span className="label text-white/40">Real results · Local Adelaide business</span>
+            <h2 className="mb-5 md:mb-7 font-semibold text-white max-w-xl leading-[1.1]">
+              Real results after launch
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+              {/* Left: images */}
+              <div className="flex flex-col gap-4">
+                <div className="rounded-2xl overflow-hidden border border-white/10">
+                  <Image src="/work2.webp" alt="Uncle Hainanese Chicken Rice website" width={800} height={500} className="w-full object-cover" />
                 </div>
-              ))}
+                <div className="rounded-2xl overflow-hidden border border-white/10">
+                  <Image src="/analytics.jpeg" alt="Google Analytics results" width={800} height={400} className="w-full object-cover" />
+                </div>
+              </div>
+
+              {/* Right: copy + results */}
+              <div className="flex flex-col justify-center gap-6">
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <p className="text-[12px] font-bold uppercase tracking-widest text-white/70">Uncle Hainanese Chicken Rice — Adelaide</p>
+                    <Link href="https://unclechickenrice.com" target="_blank" rel="noopener noreferrer" className="shrink-0 text-[11px] font-semibold text-white/40 hover:text-white/80 border border-white/20 hover:border-white/40 rounded-full px-3 py-1 transition-all">
+                      unclechickenrice.com ↗
+                    </Link>
+                  </div>
+                  <p className="text-white/80 text-base md:text-[17px] leading-relaxed">
+                    Redesigned their website to make it clearer, faster, and easier for customers to take action.
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-white/40">Results after launch</p>
+                  {[
+                    "500+ visitors in the first month",
+                    "Noticeable increase in customer enquiries",
+                    "Faster, cleaner experience on mobile",
+                  ].map((r) => (
+                    <div key={r} className="flex items-start gap-3">
+                      <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0" />
+                      <p className="text-white/80 text-[15px] leading-snug">{r}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 pt-2">
+                  <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
+                    <p className="text-[40px] font-extrabold leading-none tracking-tight text-white">500+</p>
+                    <p className="text-[13px] text-white/50 mt-1">Visitors in first 30 days</p>
+                  </div>
+                  <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
+                    <p className="text-[40px] font-extrabold leading-none tracking-tight text-white">14d</p>
+                    <p className="text-[13px] text-white/50 mt-1">Website live in 14 days</p>
+                  </div>
+                </div>
+
+                {/* CTA transition */}
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-white/60 text-[15px] mb-4">Want results like this for your business?</p>
+                  <Link href="/contact" className="pill-accent w-fit">Get your free mockup →</Link>
+                  <p className="text-[12px] text-white/30 mt-3">No payment. No commitment.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

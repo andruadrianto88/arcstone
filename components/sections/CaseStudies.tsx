@@ -38,30 +38,6 @@ const ROWS: Row[] = [
     href: "#",
     image: "/work3.webp",
   },
-  {
-    partner: "Harlow & Co.",
-    value: "More leads",
-    outcome: "Built to turn visitors into paying clients",
-    service: "Design, Copywriting, Dev",
-    href: "#",
-    image: "/work1.webp",
-  },
-  {
-    partner: "Saltwood Café",
-    value: "More walk-ins",
-    outcome: "Designed to attract walk-ins and grow regulars",
-    service: "Design, Dev, SEO",
-    href: "#",
-    image: "/work2.webp",
-  },
-  {
-    partner: "Mercer Legal",
-    value: "More trust",
-    outcome: "Built to build trust and drive enquiries",
-    service: "Design, Dev, Copywriting",
-    href: "#",
-    image: "/work3.webp",
-  },
 ];
 
 export default function CaseStudies() {
