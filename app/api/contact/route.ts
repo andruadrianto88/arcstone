@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
   const { error } = await resend.emails.send({
     from: "GoodSites Mockup Request <onboarding@resend.dev>",
-    to: "andru.adrianto@gmail.com",
+    to: "hello@goodsites.com.au",
     replyTo: email,
     subject: `Mockup request — ${company} (${name})`,
     html: `

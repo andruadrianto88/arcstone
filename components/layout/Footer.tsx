@@ -4,11 +4,10 @@ const cols = [
   {
     heading: "Services",
     links: [
-      { label: "Web Design",   href: "/services" },
-      { label: "SEO & Growth", href: "/services" },
-      { label: "Copywriting",  href: "/services" },
-      { label: "Maintenance",  href: "/services" },
-      { label: "Branding",     href: "/services" },
+      { label: "Web Design",   href: "/#services" },
+      { label: "Development",  href: "/#services" },
+      { label: "Copywriting",  href: "/#services" },
+      { label: "SEO",          href: "/#services" },
     ],
   },
   {
@@ -29,7 +28,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <p className="text-white font-extrabold text-xl tracking-tight mb-3">GoodSites</p>
+            <p className="text-white text-xl mb-3" style={{ fontFamily: "var(--font-mango)", letterSpacing: "0.01em", fontWeight: 700 }}>GOODSITES</p>
             <p className="text-sm leading-relaxed text-[#555]">
               Websites for Adelaide businesses.<br />Fast, affordable, built to last.
             </p>
@@ -54,10 +53,6 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li><a href="mailto:hello@goodsites.com.au" className="hover:text-white transition-colors">hello@goodsites.com.au</a></li>
               <li>Adelaide, SA</li>
-              <li className="flex gap-4 pt-1">
-                <a href="#" className="hover:text-white transition-colors">Instagram</a>
-                <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-              </li>
             </ul>
           </div>
         </div>

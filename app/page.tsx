@@ -214,7 +214,7 @@ export default function Home() {
             </div>
 
             {/* Slider */}
-            <div className="mt-10">
+            <div className="mt-10 max-w-[880px] mx-auto">
               <BeforeAfterSlider
                 before="/before.webp"
                 after="/after.webp"
