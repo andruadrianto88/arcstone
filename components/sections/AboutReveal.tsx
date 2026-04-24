@@ -103,7 +103,7 @@ export default function AboutReveal({ as = "h2", className = "" }: Props) {
     <section
       ref={ref}
       id="about"
-      className={`relative min-h-[450vh] bg-[#101010] text-white ${className}`}
+      className={`relative min-h-[320vh] bg-[#101010] text-white ${className}`}
     >
       <div className="sticky top-0 min-h-screen w-full flex items-center overflow-hidden ">
         <div
@@ -116,7 +116,7 @@ export default function AboutReveal({ as = "h2", className = "" }: Props) {
         />
         <div className="relative wrap w-full pt-14 pb-16 md:pt-20 md:pb-20">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-[11px] md:text-xs text-white/70 mb-10 md:mb-14">
-            <p className="font-semibold tracking-wide">Arcstone©</p>
+            <p className="font-semibold tracking-wide">GoodSites©</p>
             <p className="leading-snug">
               Driven by visions.
               <br />

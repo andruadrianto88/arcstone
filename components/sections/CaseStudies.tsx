@@ -16,7 +16,7 @@ type Row = {
 const ROWS: Row[] = [
   {
     partner: "Vossén",
-    value: "Built for bookings",
+    value: "More bookings",
     outcome: "Designed to increase bookings with a frictionless flow",
     service: "Design, Dev, SEO",
     href: "#",
@@ -24,7 +24,7 @@ const ROWS: Row[] = [
   },
   {
     partner: "Uncle Hainanese",
-    value: "Easy to update",
+    value: "Easier updates",
     outcome: "Built to streamline reservations and reduce manual updates",
     service: "Design, Dev, Copywriting",
     href: "#",
@@ -32,7 +32,7 @@ const ROWS: Row[] = [
   },
   {
     partner: "KORA",
-    value: "Built for conversions",
+    value: "Higher conversions",
     outcome: "Designed to drive event sign-ups and repeat visits",
     service: "Design, Dev, SEO",
     href: "#",
@@ -40,7 +40,7 @@ const ROWS: Row[] = [
   },
   {
     partner: "Harlow & Co.",
-    value: "Built for leads",
+    value: "More leads",
     outcome: "Built to turn visitors into paying clients",
     service: "Design, Copywriting, Dev",
     href: "#",
@@ -48,7 +48,7 @@ const ROWS: Row[] = [
   },
   {
     partner: "Saltwood Café",
-    value: "Built for walk-ins",
+    value: "More walk-ins",
     outcome: "Designed to attract walk-ins and grow regulars",
     service: "Design, Dev, SEO",
     href: "#",
@@ -56,15 +56,13 @@ const ROWS: Row[] = [
   },
   {
     partner: "Mercer Legal",
-    value: "Built for trust",
+    value: "More trust",
     outcome: "Built to build trust and drive enquiries",
     service: "Design, Dev, Copywriting",
     href: "#",
     image: "/work3.png",
   },
 ];
-
-const LETTERS = "abcdefghijklmnopqrstuvwxyz".split("");
 
 export default function CaseStudies() {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -88,15 +86,14 @@ export default function CaseStudies() {
         </div>
 
         {/* Header row */}
-        <div className="grid grid-cols-[1fr_1fr_minmax(360px,1.6fr)_auto_1fr] items-center gap-6 text-[12px] text-white/50 mb-6">
+        <div className="grid grid-cols-[1.5fr_1fr_minmax(300px,1.5fr)_1fr] items-center gap-6 text-[12px] text-white/50 mb-6 px-4">
           <span>Partner</span>
-          <span>Built for</span>
+          <span>Outcome</span>
           <span className="font-[family-name:var(--font-display)] tracking-wider text-white/70 text-center">
             <span className="text-white/40">(&nbsp;&nbsp;</span>
-            <span className="underline underline-offset-4">ARCSTONE CASE STUDIES</span>
+            <span className="underline underline-offset-4">GOODSITES CASE STUDIES</span>
             <span className="text-white/40">&nbsp;&nbsp;)</span>
           </span>
-          <span />
           <span className="text-right">Service</span>
           <p className="col-span-full text-center text-[10px] text-white/40 tracking-wide md:hidden -mt-4 mb-2">
             Tap a row to preview
@@ -104,7 +101,7 @@ export default function CaseStudies() {
         </div>
 
         {/* Floating preview image */}
-        <div className="absolute left-[53%] top-[52%] -translate-x-1/2 -translate-y-1/2 w-[25%] max-w-[380px] aspect-[4/5] pointer-events-none z-0">
+        <div className="absolute left-[65%] top-[48%] -translate-x-1/2 -translate-y-1/2 w-[32%] max-w-[480px] aspect-[16/9] pointer-events-none z-0">
           {ROWS.map((r, i) => {
             const on = hovered === i;
             return (
@@ -128,7 +125,7 @@ export default function CaseStudies() {
         <div className="relative">
           <motion.p
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 z-20 hidden max-w-[14rem] -translate-x-1/2 -translate-y-1/2 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-white/38 md:block"
+            className="pointer-events-none absolute left-[65%] top-1/2 z-20 hidden max-w-[14rem] -translate-x-1/2 -translate-y-1/2 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-white/38 md:block"
             initial={false}
             animate={{ opacity: hovered === null ? 1 : 0 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
@@ -145,24 +142,18 @@ export default function CaseStudies() {
                     href={r.href}
                     onMouseEnter={() => setHovered(i)}
                     onMouseLeave={() => setHovered(null)}
-                    className="block py-2.5"
+                    className={`block py-3 px-4 -mx-4 rounded-xl transition-all duration-200 ${isHover ? "bg-white/5" : ""}`}
                   >
                     <div
-                      className="grid grid-cols-[1fr_1fr_minmax(360px,1.6fr)_auto_1fr] items-start gap-6 leading-[1.15] transition-colors duration-200 font-[family-name:var(--font-harmond)] text-[15px] md:text-[16px] uppercase tracking-[0.12em]"
-                      style={{
-                        background: isHover ? "#fff" : "transparent",
-                        color: isHover ? "#000" : "#ffffff",
-                        mixBlendMode: isHover ? "difference" : "normal",
-                      }}
+                      className="grid grid-cols-[1.5fr_1fr_minmax(300px,1.5fr)_1fr] items-start gap-6 leading-[1.15] font-[family-name:var(--font-harmond)] text-[15px] md:text-[16px] uppercase tracking-[0.12em]"
                     >
                       <div className="flex flex-col gap-1">
-                        <span className="truncate">{r.partner}</span>
-                        <span className="font-sans normal-case tracking-normal text-[11px] opacity-60 font-normal">{r.outcome}</span>
+                        <span className="truncate text-white">{r.partner}</span>
+                        <span className={`font-sans normal-case tracking-normal text-[11px] font-normal transition-colors ${isHover ? "text-white/70" : "text-white/40"}`}>{r.outcome}</span>
                       </div>
-                      <span className="truncate text-[13px]" style={{ color: isHover ? "#000" : "rgba(255,255,255,0.7)" }}>{r.value}</span>
+                      <span className={`truncate text-[13px] mt-0.5 transition-colors ${isHover ? "text-white/90" : "text-white/60"}`}>{r.value}</span>
                       <span />
-                      <span className="w-16 text-center normal-case" style={{ color: isHover ? "#000" : "rgba(255,255,255,0.6)" }}>({LETTERS[i]}.)</span>
-                      <span className="text-right truncate font-sans normal-case tracking-normal text-[13px]">
+                      <span className={`text-right truncate font-sans normal-case tracking-normal text-[13px] mt-0.5 transition-colors ${isHover ? "text-white/90" : "text-white/60"}`}>
                         {r.service}
                       </span>
                     </div>

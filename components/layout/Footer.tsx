@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <p className="text-white font-extrabold text-xl tracking-tight mb-3">Arcstone</p>
+            <p className="text-white font-extrabold text-xl tracking-tight mb-3">GoodSites</p>
             <p className="text-sm leading-relaxed text-[#555]">
               Websites for Adelaide businesses.<br />Fast, affordable, built to last.
             </p>
@@ -52,7 +52,7 @@ export default function Footer() {
           <div>
             <p className="text-white text-xs font-semibold uppercase tracking-widest mb-5">Contact</p>
             <ul className="space-y-3 text-sm">
-              <li><a href="mailto:hello@arcstone.com.au" className="hover:text-white transition-colors">hello@arcstone.com.au</a></li>
+              <li><a href="mailto:hello@goodsites.com.au" className="hover:text-white transition-colors">hello@goodsites.com.au</a></li>
               <li>Adelaide, SA</li>
               <li className="flex gap-4 pt-1">
                 <a href="#" className="hover:text-white transition-colors">Instagram</a>
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between gap-4 text-sm">
-          <p>© {new Date().getFullYear()} Arcstone. Built in Adelaide.</p>
+          <p>© {new Date().getFullYear()} GoodSites. Built in Adelaide.</p>
         </div>
       </div>
     </footer>

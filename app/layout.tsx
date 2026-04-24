@@ -18,6 +18,19 @@ const mango = localFont({
   weight: "100 900",
 });
 
+const round8 = localFont({
+  src: "./fonts/Round8-Four.otf",
+  variable: "--font-round8",
+  display: "swap",
+});
+
+const mangoGrotesque = localFont({
+  src: "./fonts/MangoGrotesque-VF.ttf",
+  variable: "--font-mango",
+  display: "swap",
+  weight: "100 900",
+});
+
 const harmond = localFont({
   src: [
     { path: "./fonts/Harmond-ExtraBoldExpanded.otf", weight: "800", style: "normal" },
@@ -28,7 +41,7 @@ const harmond = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Arcstone — Web Design Adelaide",
+  title: "GoodSites — Web Design Adelaide",
   description: "Affordable, custom websites for small businesses in Adelaide. Web design, SEO, copywriting and maintenance. Get a free quote today.",
 };
 
@@ -38,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${mango.variable} ${harmond.variable} h-full`}>
+    <html lang="en" className={`${inter.variable} ${mango.variable} ${harmond.variable} ${round8.variable} ${mangoGrotesque.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-white antialiased">
         <Navbar />
         <main className="flex-1 pt-20">{children}</main>

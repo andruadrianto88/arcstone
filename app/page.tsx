@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 import WorkShowcase from "@/components/sections/WorkShowcase";
 import AboutReveal from "@/components/sections/AboutReveal";
 import CaseStudies from "@/components/sections/CaseStudies";
@@ -182,28 +183,58 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Image showcase */}
-        <div className="wrap pb-0">
-          <div className="mx-16 rounded-3xl bg-[#f3f3f3] border border-[#e8e8e8] p-3">
-            <div className="block relative rounded-2xl overflow-hidden group h-[540px]">
-              <video
-                src="/vid1.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover object-center"
+        {/* Before / After */}
+        <div className="wrap pb-16 pt-6">
+          <div className="mx-16">
+            {/* Headline */}
+            <div className="text-center mb-3">
+              <h2 className="text-[1.8rem] md:text-[2.2rem] font-bold tracking-tight text-[#111] mb-2">
+                See the difference a better website makes
+              </h2>
+              <p className="text-[#555] text-base max-w-xl mx-auto">
+                We redesign outdated websites into clean, modern experiences that turn visitors into bookings.
+              </p>
+            </div>
+
+            {/* Slider */}
+            <div className="mt-10">
+              <BeforeAfterSlider
+                before="/before.jpg"
+                after="/after.jpeg"
+                beforeAlt="Before — outdated website"
+                afterAlt="After — modern website"
               />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
-              {/* Center button */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <Link href="/#work" className="pointer-events-auto flex items-center gap-2.5 bg-black/40 backdrop-blur-md border border-white/10 text-white text-[15px] font-semibold px-8 py-4 rounded-full hover:bg-black/60 transition-all duration-300 transform group-hover:scale-105">
-                  See works
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M7 17L17 7M17 7H7M17 7v10"/>
-                  </svg>
-                </Link>
+            </div>
+
+            {/* Callouts + CTA */}
+            <div className="mt-6 flex flex-col items-center gap-6">
+              {/* Why it works better */}
+              <div className="flex flex-col items-center">
+                <p className="text-center text-[11px] font-bold uppercase tracking-widest text-[#aaa] mb-4">Why it works better</p>
+                <div className="flex gap-10">
+                  <ul className="flex flex-col gap-2">
+                    {["Hard to navigate", "Outdated design", "No clear booking flow"].map((t) => (
+                      <li key={t} className="flex items-center gap-2 text-[13px] text-[#555]">
+                        <span className="text-[#cc2200] font-bold text-[11px]">✕</span> {t}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="w-px bg-[#e8e8e8]" />
+                  <ul className="flex flex-col gap-2">
+                    {["Clean, modern layout", "Mobile-friendly", `Clear "Book Now" action`].map((t) => (
+                      <li key={t} className="flex items-center gap-2 text-[13px] text-[#555]">
+                        <span className="text-[#1a7a3c] font-bold text-[11px]">✓</span> {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="flex flex-col items-center gap-2 pt-2">
+                <p className="text-[#111] font-semibold text-base">Want this for your business?</p>
+                <Link href="/contact" className="pill-dark shadow-[0_4px_12px_rgba(0,0,0,0.2)]">Get your free mockup →</Link>
+                <p className="text-[#aaa] text-[12px] mt-1">No commitment. See your site before paying anything.</p>
               </div>
             </div>
           </div>
@@ -279,7 +310,7 @@ export default function Home() {
         <div className="relative wrap">
           <p className="max-w-[1600px] mx-auto text-[24px] md:text-[34px] leading-[1.25] tracking-tight font-semibold">
             <span className="inline-block w-12 md:w-20" />
-            We&apos;re a small team — and that&apos;s the point. No account managers, no junior handoffs, no broken telephone. When you work with{" "}<Image src="/logo.png" alt="Arcstone" width={80} height={16} className="inline-block align-middle mx-1" />{" "}Arcstone, you work directly with the people building your site.
+            We&apos;re a small team — and that&apos;s the point. No account managers, no junior handoffs, no broken telephone. When you work with{" "}<Image src="/logo.png" alt="GoodSites" width={34} height={7} className="inline-block align-middle mx-1" unoptimized />{" "}<span style={{ fontFamily: "var(--font-mango)", letterSpacing: "0.01em", fontStyle: "normal", fontWeight: 700 }}>GOODSITES</span>, you work directly with the people building your site.
           </p>
         </div>
       </section>

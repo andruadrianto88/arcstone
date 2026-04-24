@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(cp \"c:/antigravity5/arcstone-web/Harmond-Free-For-Personal-Use/Harmond - Free For Personal Use/Harmond-ExtraBoldExpanded.otf\" \"c:/antigravity5/arcstone-web/app/fonts/\")",
+      "Bash(cp \"c:/antigravity5/arcstone-web/Harmond-Free-For-Personal-Use/Harmond - Free For Personal Use/Harmond-SemiBoldCondensed.otf\" \"c:/antigravity5/arcstone-web/app/fonts/\")"
+    ]
+  }
+}

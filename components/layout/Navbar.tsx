@@ -20,9 +20,9 @@ export default function Navbar() {
           <div className="grid grid-cols-3 items-center h-[60px]">
 
             {/* Logo — left */}
-            <Link href="/" className="flex items-center gap-2 font-extrabold text-white text-lg tracking-tight">
-              <img src="/logo.png" alt="Arcstone" className="h-7 w-auto" />
-              Arcstone
+            <Link href="/" className="flex items-center gap-2 text-white text-lg tracking-tight">
+              <img src="/logo.png" alt="GoodSites" className="h-7 w-auto" />
+              <span style={{ fontFamily: "var(--font-mango)", letterSpacing: "0.01em", fontStyle: "normal", fontSize: "1.4rem", fontWeight: 700 }}>GOODSITES</span>
             </Link>
 
             {/* Nav links — truly centered */}
